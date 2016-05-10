@@ -13,16 +13,16 @@ ember install ember-tachyons-components
 ##### Flag Object
 
 ```hbs
-{{#t-flag-object collapse="m"}}
-  {{#t-flag-object-inner maxWidth="5"}}
+{{#t-flag-object collapse="m" as |t|}}
+  {{#t.inner maxWidth="5"}}
     <img src="/img/super-wide.jpg" alt="A bright blue sky" />
-  {{/t-flag-object-inner}}
-  {{#t-flag-object-inner}}
+  {{/t.inner}}
+  {{#t.inner}}
     <p class="lh-copy">
       For desktop, this text is vertically aligned middle, no matter what the height of the image is.
       On mobile, this is a paragraph below an image.
     </p>
-  {{/t-flag-object-inner}}
+  {{/t.inner}}
 {{/t-flag-object}}
 ```
 

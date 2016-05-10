@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="https://npmcdn.com/tachyons@4.0.0-beta.24/css/tachyons.min.css">
+
+{{#t-flag-object collapse="m" as |t|}}
+  {{#t.inner}}
+    <img src="http://tachyons.io/img/super-wide.jpg" alt="A bright blue sky" />
+  {{/t.inner}}
+  {{#t.inner}}
+    <p class="lh-copy">
+      For desktop, this text is vertically aligned middle, no matter what the height of the image is.
+      On mobile, this is a paragraph below an image.
+    </p>
+  {{/t.inner}}
+{{/t-flag-object}}

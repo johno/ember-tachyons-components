@@ -11,6 +11,8 @@ export default Ember.Component.extend({
     'isCollapseMedium:dt-l'
   ],
 
+  type: 't-flag-object-inner',
+
   isCollapseNone: Ember.computed('collapse', function() {
     return this.get('collapse') === 'none';
   }),
