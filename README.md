@@ -14,7 +14,7 @@ ember install ember-tachyons-components
 
 ```hbs
 {{#t-flag-object collapse="m"}}
-  {{#t-flag-object-inner}}
+  {{#t-flag-object-inner maxWidth="5"}}
     <img src="/img/super-wide.jpg" alt="A bright blue sky" />
   {{/t-flag-object-inner}}
   {{#t-flag-object-inner}}

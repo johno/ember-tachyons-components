@@ -6,14 +6,6 @@ moduleForComponent('t-flag-object', 'Integration | Component | t flag object', {
 });
 
 test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
-  this.render(hbs`{{t-flag-object}}`);
-
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
   this.render(hbs`
     {{#t-flag-object}}
       template block text
@@ -21,4 +13,21 @@ test('it renders', function(assert) {
   `);
 
   assert.equal(this.$().text().trim(), 'template block text');
+  assert.ok(this.$('div').hasClass('dt'));
+});
+
+test('it applies the correct collapse class for none', function(assert) {
+  this.render(hbs`{{t-flag-object collapse="none"}}`);
+  assert.ok(this.$('div').hasClass('dt'));
+});
+
+test('it applies the correct collapse class for s', function(assert) {
+  this.render(hbs`{{t-flag-object collapse="s"}}`);
+  assert.ok(this.$('div').hasClass('dt-m'));
+  assert.ok(this.$('div').hasClass('dt-l'));
+});
+
+test('it applies the correct collapse class for m', function(assert) {
+  this.render(hbs`{{t-flag-object collapse="m"}}`);
+  assert.ok(this.$('div').hasClass('dt-l'));
 });
