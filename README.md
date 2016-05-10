@@ -1,26 +1,34 @@
-# Ember-tachyons-components
+# ember-[tachyons](http://tachyons.io)-components
 
-This README outlines the details of collaborating on this Ember addon.
+100% mobile-first, responsive UI library for building ambitious Ember applications.
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+```sh
+ember install ember-tachyons-components
+```
 
-## Running
+## Usage
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+##### Flag Object
 
-## Running Tests
+```hbs
+{{#t-flag-object collapse="m"}}
+  {{#t-flag-object-inner}}
+    <img src="/img/super-wide.jpg" alt="A bright blue sky" />
+  {{/t-flag-object-inner}}
+  {{#t-flag-object-inner}}
+    <p class="lh-copy">
+      For desktop, this text is vertically aligned middle, no matter what the height of the image is.
+      On mobile, this is a paragraph below an image.
+    </p>
+  {{/t-flag-object-inner}}
+{{/t-flag-object}}
+```
 
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+###### Properties
 
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
+property | values | default | behavior
+-------- | ------ | ------- | -------
+`collapse` | `s`,`m`,`none` | `none` | Specify which viewport the flag object collapses.
+`maxWidth` | `1`,`2`,`3`,`4`,`5`,`6`,`7`,`8`,`9`,`none` | `none` | Specify the max width of the object.
