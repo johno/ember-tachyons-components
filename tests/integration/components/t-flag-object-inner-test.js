@@ -32,3 +32,8 @@ test('it applies the correct collapse class for m', function(assert) {
   this.render(hbs`{{t-flag-object-inner collapse="m"}}`);
   assert.ok(this.$('div').hasClass('dtc-l'));
 });
+
+test('it applies a max width when given', function(assert) {
+  this.render(hbs`{{t-flag-object-inner maxWidth="6"}}`);
+  assert.ok(this.$('div').hasClass('mw6'));
+});

@@ -1,27 +1,17 @@
 import Ember from 'ember';
+import Collapse from '../mixins/collapse';
+import MaxWidth from '../mixins/max-width';
 import layout from '../templates/components/t-flag-object';
 
-export default Ember.Component.extend({
+export default Ember.Component.extend(Collapse, MaxWidth, {
   layout,
-  collapse: 'none',
   classNameBindings: [
     'isCollapseNone:dt',
     'isCollapseSmall:dt-m',
     'isCollapseSmall:dt-l',
-    'isCollapseMedium:dt-l'
+    'isCollapseMedium:dt-l',
+    'maxWidthClass'
   ],
 
-  type: 't-flag-object-inner',
-
-  isCollapseNone: Ember.computed('collapse', function() {
-    return this.get('collapse') === 'none';
-  }),
-
-  isCollapseSmall: Ember.computed('collapse', function() {
-    return this.get('collapse') === 's';
-  }),
-
-  isCollapseMedium: Ember.computed('collapse', function() {
-    return this.get('collapse') === 'm';
-  })
+  type: 't-flag-object-inner'
 });
